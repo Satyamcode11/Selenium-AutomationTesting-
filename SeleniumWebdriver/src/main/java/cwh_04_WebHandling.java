@@ -1,10 +1,14 @@
-package com.selenium.Webelements;
+
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebElementsHandling {
+import java.util.List;
+
+public class cwh_04_WebHandling {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -45,6 +49,20 @@ public class WebElementsHandling {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='GOI']")).click();
 
+        driver.findElement(By.id("autosuggest")).sendKeys("ar");
+        Thread.sleep(2000L);
+        List<WebElement> options = driver.findElements(By.cssSelector("li.ui-menu-item a"));
+
+        for(WebElement option : options){
+            if (option.getText().equalsIgnoreCase("Argentina")){
+                option.click();
+                break;
+            }
+        }
+        System.out.println(driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).isSelected());
+        driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).click();
+        System.out.println(driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).isSelected());
+        System.out.println(driver.findElements(By.cssSelector("input[type='checkbox'")).size());
 
 
 

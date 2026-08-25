@@ -1,10 +1,9 @@
-package com.selenium;
 
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Main {
+public class cwh_01_InvokingWeb {
     public static void main(String[] args) {
 
         //? Invoking Browser
