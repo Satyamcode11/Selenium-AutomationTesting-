@@ -48,6 +48,10 @@ public class cwh_04_WebHandling {
         driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_originStation1_CTNR'] //a[@value='CCU']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='GOI']")).click();
+Thread.sleep(2000l);
+        //Calender UI testing
+        driver.findElement(By.className("ui-state-default")).click();
+        Thread.sleep(2000L);
 
         driver.findElement(By.id("autosuggest")).sendKeys("ar");
         Thread.sleep(2000L);
@@ -59,10 +63,13 @@ public class cwh_04_WebHandling {
                 break;
             }
         }
+
+
         System.out.println(driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).isSelected());
         driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).click();
         System.out.println(driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).isSelected());
         System.out.println(driver.findElements(By.cssSelector("input[type='checkbox'")).size());
+
 
 
 
