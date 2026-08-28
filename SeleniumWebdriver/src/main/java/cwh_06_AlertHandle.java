@@ -9,7 +9,7 @@ public class cwh_06_AlertHandle {
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
         driver.findElement(By.xpath("//input[@id=\"name\"]")).sendKeys(text);
         driver.findElement(By.id("alertbtn")).click();
-        System.out.println( driver.switchTo().alert().getText());
+        System.out.println(driver.switchTo().alert().getText());
         driver.switchTo().alert().accept();
         driver.findElement(By.id("confirmbtn")).click();
         System.out.println(driver.switchTo().alert().getText());

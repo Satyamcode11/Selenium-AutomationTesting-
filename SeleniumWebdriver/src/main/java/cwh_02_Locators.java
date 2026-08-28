@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+
 import java.time.Duration;
 
 public class cwh_02_Locators {
@@ -27,7 +28,7 @@ public class cwh_02_Locators {
         // becz of timeout issue that's why we add a method
         // called implicit wait  after web driver section (Line - 15)
 
-       //get elements by link text
+        //get elements by link text
         driver.findElement(By.linkText("Forgot your password?")).click();
         Thread.sleep(3000);
 
@@ -59,8 +60,8 @@ public class cwh_02_Locators {
 
         Thread.sleep(2000);
         System.out.println(driver.findElement(By.tagName("p")).getText());
-        Assert.assertEquals(driver.findElement(By.tagName("p")).getText(),"You are successfully logged in.");
-        Assert.assertEquals(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText(),"Hello "+name+",");
+        Assert.assertEquals(driver.findElement(By.tagName("p")).getText(), "You are successfully logged in.");
+        Assert.assertEquals(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText(), "Hello " + name + ",");
         driver.findElement(By.xpath("//*[text()='Log Out']")).click();
         Thread.sleep(2000);
         driver.close();

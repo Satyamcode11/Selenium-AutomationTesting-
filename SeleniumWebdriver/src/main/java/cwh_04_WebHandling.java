@@ -48,7 +48,7 @@ public class cwh_04_WebHandling {
         driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_originStation1_CTNR'] //a[@value='CCU']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='GOI']")).click();
-Thread.sleep(2000l);
+        Thread.sleep(2000l);
         //Calender UI testing
         driver.findElement(By.className("ui-state-default")).click();
         Thread.sleep(2000L);
@@ -57,8 +57,8 @@ Thread.sleep(2000l);
         Thread.sleep(2000L);
         List<WebElement> options = driver.findElements(By.cssSelector("li.ui-menu-item a"));
 
-        for(WebElement option : options){
-            if (option.getText().equalsIgnoreCase("Argentina")){
+        for (WebElement option : options) {
+            if (option.getText().equalsIgnoreCase("Argentina")) {
                 option.click();
                 break;
             }
@@ -69,9 +69,6 @@ Thread.sleep(2000l);
         driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).click();
         System.out.println(driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).isSelected());
         System.out.println(driver.findElements(By.cssSelector("input[type='checkbox'")).size());
-
-
-
 
 
     }

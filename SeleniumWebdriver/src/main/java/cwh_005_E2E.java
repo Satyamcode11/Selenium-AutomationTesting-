@@ -7,21 +7,21 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class cwh_005_E2E {
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 
         driver.findElement(By.id("autosuggest")).sendKeys("ind");
         Thread.sleep(1000L);
-       List<WebElement> options = driver.findElements(By.xpath("//li[@class='ui-menu-item'] //a"));
+        List<WebElement> options = driver.findElements(By.xpath("//li[@class='ui-menu-item'] //a"));
 
-       for(WebElement option : options) {
-           if (option.getText().equalsIgnoreCase("India")) {
-               option.click();
-               break;
-           }
-       }
-       Thread.sleep(2000L);
+        for (WebElement option : options) {
+            if (option.getText().equalsIgnoreCase("India")) {
+                option.click();
+                break;
+            }
+        }
+        Thread.sleep(2000L);
         //click round to one trip
         driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
         Thread.sleep(2000L);
@@ -37,13 +37,13 @@ public class cwh_005_E2E {
         Thread.sleep(2000L);
 
         int i = 1;
-        while(i<=3){
+        while (i <= 3) {
             driver.findElement(By.id("hrefIncAdt")).click();
             i++;
         }
 
         int x = 1;
-        while(x<=2){
+        while (x <= 2) {
             driver.findElement(By.id("hrefIncChd")).click();
             x++;
         }
