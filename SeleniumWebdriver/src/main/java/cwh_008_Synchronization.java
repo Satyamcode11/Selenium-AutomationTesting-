@@ -15,7 +15,7 @@ public class cwh_008_Synchronization {
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/loginpagePractise/");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         String userName = "rahulshettyacademy";
         String password = "Learning@830$3mK2";
 
