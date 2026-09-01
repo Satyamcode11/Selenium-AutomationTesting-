@@ -2,6 +2,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -14,12 +17,12 @@ public class Practice {
         WebDriver driver = new EdgeDriver();
 
         //maximize the browser
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
         //get into the website
 //        driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-        driver.get("https://rahulshettyacademy.com/seleniumPractise/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+//        driver.get("https://rahulshettyacademy.com/seleniumPractise/");
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
 //        //For static dropdown
 ////        WebElement selectelement=driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
@@ -98,24 +101,58 @@ public class Practice {
 //        driver.switchTo().alert().dismiss();
 //
 //
-                 int j =0;
-        String []veggies = {"Brocolli","Tomato","Cucumber","Beetroot","Pumpkin"};
+//                 int j =0;
+//        String []veggies = {"Brocolli","Tomato","Cucumber","Beetroot","Pumpkin"};
+//
+//        List<WebElement> products = driver.findElements(By.xpath("//h4[@class='product-name']"));
+//                for (int i = 0; i< products.size();i++){
+//                    String [] name = products.get(i).getText().split("-");
+//                    String items = name[0].trim();
+//
+//
+//                    List<String> li = new  ArrayList<>(Arrays.asList(veggies));
+//
+//                    if (li.contains(items)){
+//                        j++;
+//                        driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
+//                        if (j==veggies.length){
+//                            break;
+//                        }
+//                    }
+//                }
 
-        List<WebElement> products = driver.findElements(By.xpath("//h4[@class='product-name']"));
-                for (int i = 0; i< products.size();i++){
-                    String [] name = products.get(i).getText().split("-");
-                    String items = name[0].trim();
 
+//        driver.get("https://rahulshettyacademy.com/AutomationPractice/"); // This is the main driver for all the page
+        //find how many elements links are present using "a";
+//
+//
+//        System.out.println( driver.findElements(By.tagName("a")).size()); // here i got the whole page links
+//
+//       WebElement footer =  driver.findElement(By.id("gf-BIG")); // here i create a mini driver or subset driver for only footer section..
+//        System.out.println(footer.findElements(By.tagName("a")).size()); // here i got the footer section links.
+//
+//        // how many links are present in 3 column
+//
+//       WebElement columnDriver = footer.findElement(By.xpath("//table/tbody/tr/td[3]/ul"));
+//        System.out.println(columnDriver.findElements(By.tagName("a")).size());
 
-                    List<String> li = new  ArrayList<>(Arrays.asList(veggies));
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 
-                    if (li.contains(items)){
-                        j++;
-                        driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
-                        if (j==veggies.length){
-                            break;
-                        }
-                    }
-                }
+        driver.findElement(By.id("checkBoxOption3")).click();
+
+        String labelsName = driver.findElement(By.xpath("//div[@id='checkbox-example']/fieldset/label[3]")).getText();
+
+        WebElement dropDown = driver.findElement(By.id("dropdown-class-example"));
+        Select selectDropdown = new Select(dropDown);
+        selectDropdown.selectByVisibleText(labelsName);
+
+        driver.findElement(By.id("name")).sendKeys(labelsName);
+        driver.findElement(By.id("alertbtn")).click();
+        String alertMessage = driver.switchTo().alert().getText();
+
+        if (alertMessage.contains(labelsName)){
+            System.out.println("Successful");
+        }else System.out.println("Something went wrong");
+
     }
 }
