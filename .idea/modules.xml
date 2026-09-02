@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Selenium Code Prac.iml" filepath="$PROJECT_DIR$/.idea/Selenium Code Prac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SeleniumWebdriver/SeleniumWebdriver.iml" filepath="$PROJECT_DIR$/SeleniumWebdriver/SeleniumWebdriver.iml" />
     </modules>
   </component>
 </project>

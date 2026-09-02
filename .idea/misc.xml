@@ -5,7 +5,14 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/SeleniumWebdriver/pom.xml" />
+        <option value="$PROJECT_DIR$/Testng/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/SeleniumWebdriver/Frameworks/pom.xml" />
+        <option value="$PROJECT_DIR$/Testng/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="23" project-jdk-type="JavaSDK">
