@@ -10,6 +10,8 @@
 <!--                <include name="Smoke"/>-->
 <!--            </run>-->
 <!--        </groups>-->
+
+        <parameter name="URL" value="www.google.com"/>
         <classes>
             <class name="com.OpenCart.Test_01"/>
             <class name="com.OpenCart.Test_02"/>
